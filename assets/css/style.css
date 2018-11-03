@@ -1,61 +1,112 @@
 body {
-    background-image: url("/Users/jen/git/TriviaGame/assets/images/christmas-black/christmas-dark.png");   
+    background-image: url("/Users/jen/git/TriviaGame/assets/images/christmas-black/christmas-dark.png"); 
 }
+/* font-family: 'Homemade Apple', cursive;
+font-family: 'Griffy', cursive;
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Cinzel Decorative', cursive;
+font-family: 'IM Fell English', serif; */
 .picture-frame {
-    background-image: url("/Users/jen/git/TriviaGame/assets/images/knitted7.jpg");
+    background-image: url("/Users/jen/git/TriviaGame/assets/images/knitted7.jpg"); 
+    background-repeat: repeat-y;
     border: 3px solid #036146;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 7%;
-    height: 455px;
+    position: absolute;
+    width: 90%;
+    margin: 4%;
 }
 .row-1 {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 79%;
+    margin-top: 3%;
 } 
 .row-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 5%;
+    justify-content: flex-start;
     width: 79%;
+    margin-bottom: 3%;
 }
 .col-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
 }
-.title-area, .slide1 {
+.title, .slide1 {
     background-color: #fff;
     color: #093F7F;
 }
 .option-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 4%;
 }
-.title-area {
+.title {
     height: 96px;
+    font-family: 'Cinzel Decorative', cursive, Georgia, 'Times New Roman', Times, serif;
     font-size: 3em;
     border: 3px inset #036146;
     border-bottom: none;
 }
 .slide1 {
-    height: 150px;
     border: 3px inset #036146;
     border-top: none;
+    overflow: scroll;
 }
+
 .question {
-    font-size: 2em;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    font-family: 'Giffy', cursive, Georgia, 'Times New Roman', Times, serif;
+    
 }
 .option {
     font-size: 1em;
+    font-family: 'IM Fell English', serif, Georgia, 'Times New Roman', Times, serif;
+    padding-left: 18px;
 }
 
+@media screen and (max-width: 788px) and (min-width: 680px) {
+    .row-1 {
+        width: 79%;
+    }
+    .title {
+        font-size: 2.5em;
+    }
+    .row-2 {
+        width: 79%;
+    }
+    .question {
+        font-size: 1.5em;
+    }
+    .option-row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .row-1 {
+        width: 79%;
+    }    
+    .title {
+        font-size: 2em;
+    }
+    .row-2 {
+        width: 79%;
+    }
+    .question {
+        font-size: 1em;
+    }
+    .option-row {
+        flex-direction: column;
+    }
+}

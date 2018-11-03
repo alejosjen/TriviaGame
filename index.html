@@ -9,12 +9,9 @@
     <link rel="stylesheet" media="screen" type="text/css" href="assets/css/reset.css" />
     <!--CSS Styles-->
     <link rel="stylesheet" media="screen" type="text/css" href="assets/css/style.css" />
-    <!--Bootstrap-->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous" /> -->
-    <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Giffy|Cinzel+Decorative:400,900|IM+Fell+English" rel="stylesheet">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous" />
@@ -24,27 +21,75 @@
 
     <div class="container">
         <div class="picture-frame">
-            <div class="row-1 title-area">Winter Trivia Game
+            <div class="row-1 title">Winter Trivia Game
             </div>
-            <div class="row-2 slide1">
+            <div class="row-2 slide1 game-totals">
                 <div class="col-1">
+
                     <div class="question">
-                        What is Santa Claus' Name?
+                        Which is not one of Santa Claus' names?
                     </div>
-                    <div class="option-row">
-                        <div class="option">
-                            Old St. Nick
+                        <div class="option-row">
+                            <div>
+                                <input type="radio" id="sinter-klaas" name="santa" value="sinter-klaas" class="option" />
+                                <label for="sinter-klaas">Sinter Klaas</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="st-nicholas" name="santa" value="st-nicholas" class="option" />
+                                <label for="st-nicholas">St. Nicholas</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="sint-nikolaas" name="santa" value="sint-nikolaas" class="option" />
+                                <label for="sint-nikolaas">Sint Nikolaas</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="santa-clause" name="santa" value="santa-clause" class="option1" />
+                                <label for="santa-clause">Santa Clause</label>
+                            </div>
                         </div>
-                        <div class="option"> 
-                            Old St. Nick
-                        </div>
-                        <div class="option"> 
-                            Old St. Nick
-                        </div>
-                        <div class="option"> 
-                            Nicolaus
-                        </div>
+                    <div class="question">
+                        In 1822, Clement Clarke Moore, wrote a Christmas poem that characterized Santa as the
+                        "right jolly old elf" as we know him today. What was the title of his poem?
                     </div>
+                        <div class="option-row">
+                            <div>
+                                <input type="radio" id="christmas-eve" name="poem" value="christmas-eve" class="option" />
+                                <label for="christmas-eve">The One About Christmas Eve</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="account" name="poem" value="account" class="option1" />
+                                <label for="account">A Visit from St. Nicholas</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="night-before" name="poem" value="night-before" class="option" />
+                                <label for="night-before">'Twas the Night Before Christmas</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="happy-christmas" name="poem" value="happy-christmas" class="option" />
+                                <label for="happy-christmas">Happy Christmas</label>
+                            </div>
+                        </div>
+                    <div class="question">
+                        Which is the snowiest major city on earth?
+                    </div>
+                        <div class="option-row">
+                            <div>
+                                <input type="radio" id="anchorage" name="poem" value="anchorage" class="option" />
+                                <label for="anchorage">Anchorage, Alaska, US</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="moscow" name="poem" value="moscow" class="option" />
+                                <label for="moscow">Moscow, Russia</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="aomori" name="poem" value="aomori" class="option1" />
+                                <label for="aomori">Aomori City, Japan</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="ushuaia" name="poem" value="ushuaia" class="option" />
+                                <label for="ushuaia">Ushuaia, Tierra del Fuego, Argentina</label>
+                            </div>
+                        </div>
                 </div>
                 <!-- <div class="slide2">
                         <div class="question2"></div>
