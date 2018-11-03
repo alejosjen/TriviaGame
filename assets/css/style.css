@@ -6,6 +6,7 @@ font-family: 'Griffy', cursive;
 font-family: 'Berkshire Swash', cursive;
 font-family: 'Cinzel Decorative', cursive;
 font-family: 'IM Fell English', serif; */
+
 .picture-frame {
     background-image: url("/Users/jen/git/TriviaGame/assets/images/knitted7.jpg"); 
     background-repeat: repeat-y;
@@ -20,10 +21,13 @@ font-family: 'IM Fell English', serif; */
 }
 .row-1 {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 79%;
     margin-top: 3%;
+    padding-top: 25px;
+    padding-bottom: 5px;
 } 
 .row-2 {
     display: flex;
@@ -33,13 +37,21 @@ font-family: 'IM Fell English', serif; */
     width: 79%;
     margin-bottom: 3%;
 }
+.row-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 79%;
+    margin-bottom: 3%;
+}
 .col-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
 }
-.title, .slide1 {
+.title, .slide1, .counters {
     background-color: #fff;
     color: #093F7F;
 }
@@ -51,12 +63,16 @@ font-family: 'IM Fell English', serif; */
     padding-bottom: 4%;
 }
 .title {
-    height: 96px;
     font-family: 'Cinzel Decorative', cursive, Georgia, 'Times New Roman', Times, serif;
     font-size: 3em;
     border: 3px inset #036146;
     border-bottom: none;
 }
+#time {
+    font-size: .5em;
+    font-family: 'Giffy', cursive, Georgia, 'Times New Roman', Times, serif;
+}
+
 .slide1 {
     border: 3px inset #036146;
     border-top: none;

@@ -22,12 +22,15 @@
     <div class="container">
         <div class="picture-frame">
             <div class="row-1 title">Winter Trivia Game
+                <button type="button" class="start">Start</button>
             </div>
-            <div class="row-2 slide1 game-totals">
+            
+            <div class="row-2 slide1">
                 <div class="col-1">
+                    <p>Time Remaining:<div id="interval"></div></p>
 
                     <div class="question">
-                        Which is not one of Santa Claus' names?
+                        Which is not one of Santa's names?
                     </div>
                         <div class="option-row">
                             <div>
@@ -103,6 +106,14 @@
                         <div class="question4"></div>
                         <div class="answer-choices4"></div>
                     </div> -->
+            </div>
+            <div class="row-3 counters">
+                
+               <p>Answers correct: <div class="correct"></div></p>
+               <p>Answers incorrect: <div class="incorrect"></div></p>
+               <p>Questions unanswered: <div class="blank"></div></p>
+               <button type="button" class="try-again">Try Again?</button>
+
             </div>
         </div>
     </div>
