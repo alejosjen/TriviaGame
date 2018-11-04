@@ -1,31 +1,21 @@
-
-// Things we need to count
-// Correct answers
-
-
-// Incorrect answers
-
-
-
 var triviaQuestions = [{
     question: "Which is not one of Santa's names?",
     choices: ["Sinter Klaas", "St. Nicholas", "Sint Nikolaas", "Santa Clause"],
     correctAnswer: 3
 }, {
     question: "In 1822, Clement Clarke Moore, wrote a Christmas poem that characterized Santa as we know him today. What was the title of his poem?",
-    choices: ["The One About Christmas Eve", "A Visit from St. Nicholas", "'Twas the Night Before Christmas", "The Red Nosed Reindeer"],
+    choices: ["'The One About Christmas Eve'", "'A Visit from St. Nicholas'", "\'Twas the Night Before Christmas'", "'The Red Nosed Reindeer'"],
     correctAnswer: 1
 }, {
     question: "Which is the snowiest major city on earth?",
     choices: ["Anchorage, Alaska, US", "Moscow, Russia", "Aomori City, Japan", "Ushuaia, Tierra del Fuego, Argentina"],
-    correctAnser: 2
+    correctAnswer: 2
 }];
 
 //Turn questions & counters off at start of game 
 $('.col-2').toggle(false);
 $('.col-3').toggle(false);
-clearButtons();
-
+// Start button to toggle quiz-area on, start interval countdown, and create questions
 $('.start').click(function () {
     $('.start').toggle(false);
     $('.col-2').toggle();
@@ -34,105 +24,77 @@ $('.start').click(function () {
 });
 
 var game = {
-    /* correctAnswerCounter = 0,
-    incorrectAnswerCounter = 0, */
-
+    correctAnswerCounter: 0,
+    incorrectAnswerCounter: 0,
 
     decrement: function () {
-        var counter = 11;
+        var counter = 5;
         gameCountdown = setInterval(function () {
             console.log(counter);
             counter--;
+            $("#interval").text(counter);
             if (counter === 0) {
                 clearInterval(gameCountdown);
                 $('.col-2').css("display", "none");
                 $('.col-3').toggle();
+                game.countScore();
             }
         }, 1000);
     },
 
-
-createQuestions: function () {
-    for (var i = 0; i < triviaQuestions.length; i++) {
-        $(".question").text(triviaQuestions[i].question);
-        for (var j = 0; j < triviaQuestions[i].choices.length; j++) {
-            $("#radioChoices").append("<input type='radio' name=question-" + i +
-                " value='" + triviaQuestions[i].choices[j] + "'>" + triviaQuestions[i].choices[j]);
+    createQuestions: function () {
+        for (var i = 0; i < triviaQuestions.length; i++) {
+            $("#quiz-area").append("<p id='question'>" + triviaQuestions[i].question) + "</p>";
+            for (var j = 0; j < triviaQuestions[i].choices.length; j++) {
+                $("#quiz-area").append("<div><input type='radio' id='radio-choice' name=question-" + i +
+                    " value='" + triviaQuestions[i].choices[j] + "''>" + triviaQuestions[i].choices[j] + "</div>");
+            }
         }
-    }
-},
+    },
 
+    countScore: function () {
+        //Need to figure out why counters are not working right
 
-
-
-
-} // End of game variable
-
-
-
-function populateQuestions() {
-    for (var i = 0; i < triviaQuestions.length; i++) {
-        $(".question").text(triviaQuestions[i].question);
-        for (var j = 0; j < triviaQuestions[i].choices.length; j++) {
-            $("#radioChoices").append("<input type='radio' name=question-" + i +
-                " value='" + triviaQuestions[i].choices[j] + "'>" + triviaQuestions[i].choices[j]);
-        }
-    }
-}
-
-
-// Assign objects from HTML to correct, incorrect, no attempt Arrays?
-// Count items in array to list.length the amount of correct, incorrect, no attempts
-// Present counters after time out
-// Present percentage correct
-// Count total possible and divide by amount correct.length for percentage
-
-
-
-/* function gameTotal() {
-    $('.start').click(function () {
-        var targetButton = $('#radio-c');
-        targetButton.click(function () {
-            ["radio-c"].forEach(function () {
-                $('id').checked = true;
-                correctAnswerCounter++;
-            });
+        $.each($("input[name='question-0']:checked"), function () {
+            if ($(this).val() === triviaQuestions[0].correctAnswer) {
+                game.correctAnswerCounter++;
+            } else {
+                game.incorrectAnswerCounter++;
+            }
         });
-          if ($('radio-c').checked = true) {
-              correctAnswerCounter++;
-              $(".correct").text(correctAnswerCounter);
-          } else {
-              $('radio-c').checked = false;
-              incorrectAnswerCounter++;
-              $(".incorrect").text(incorrectAnswerCounter);
-          };  
-    });
-} */
 
-function clearButtons() {
-    $('.try-again').click(function () {
-        ["radio-a", "radio-b", "radio-c"].forEach(function () {
-            $('id').checked = false;
+        $.each($("input[name='question-1']:checked"), function () {
+            if ($(this).val() === triviaQuestions[1].correctAnswer) {
+                game.correctAnswerCounter++;
+            } else {
+                game.incorrectAnswerCounter++;
+            }
         });
-        return false;
-    })
-}
+
+        $.each($("input[name='question-2']:checked"), function () {
+            if ($(this).val() === triviaQuestions[2].correctAnswer) {
+                game.correctAnswerCounter++;
+            } else {
+                game.incorrectAnswerCounter++;
+            }
+        });        
+
+        this.score();
+    },
+
+    score: function () {
+        $(".correct").text(this.correctAnswerCounter);
+        $(".incorrect").text(this.incorrectAnswerCounter);
+    }
+
+}; // End of game variable
 
 // Reset button at end of game, no reloading page
 $('.try-again').click(function () {
     $('.start').toggle(false);
     $('.col-2').toggle();
     $('.col-3').toggle(false);
-    clearButtons();
-    var number = 3;
-    intervalID = setInterval(decrement, 1000);
-    function decrement() {
-        number--;
-        $("#interval").html(number);
-        if (number === 0) {
-            clearInterval(intervalID);
-            $('.col-2').toggle(false);
-            $('.col-3').toggle();
-        }
-    };
+    correctAnswerCounter = 0,
+    incorrectAnswerCounter = 0,
+    game.decrement();
 });
