@@ -11,7 +11,8 @@
     <link rel="stylesheet" media="screen" type="text/css" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Giffy|Cinzel+Decorative:400,900|IM+Fell+English" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Giffy|Cinzel+Decorative:400,900|IM+Fell+English"
+        rel="stylesheet">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous" />
@@ -21,102 +22,85 @@
 
     <div class="container">
         <div class="picture-frame">
-            <div class="row-1 title">Winter Trivia Game
-                <button type="button" class="start">Start</button>
-            </div>
-            
-            <div class="row-2 slide1">
-                <div class="col-1">
-                    <p>Time Remaining:<div id="interval"></div></p>
+            <div class="row-1">
+                <!-- </div> -->
+                <div class="col-1 title">Winter Trivia Game
+                    <button type="button" class="start">Start</button>
+                </div>
 
-                    <div class="question">
-                        Which is not one of Santa's names?
-                    </div>
-                        <div class="option-row">
-                            <div>
-                                <input type="radio" id="sinter-klaas" name="santa" value="sinter-klaas" class="option" />
-                                <label for="sinter-klaas">Sinter Klaas</label>
+                <!-- <div class="row-2 "> -->
+                <!--used to be col-1 below, "row-2 slide1" above-->
+                <div class="col-2 slide1">
+                    <p>Time Remaining:<div id="interval"></div>
+                    </p>
+                    <!-- <div class="questions">
+                        <div class="question"></div>
+                        <div class="choices"></div>
+                    </div> -->
+                    <form>
+                        <div class="questions">
+                            <div class="question">
+                                Which is not one of Santa's names?
                             </div>
-                            <div>
-                                <input type="radio" id="st-nicholas" name="santa" value="st-nicholas" class="option" />
-                                <label for="st-nicholas">St. Nicholas</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="sint-nikolaas" name="santa" value="sint-nikolaas" class="option" />
-                                <label for="sint-nikolaas">Sint Nikolaas</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="santa-clause" name="santa" value="santa-clause" class="option1" />
-                                <label for="santa-clause">Santa Clause</label>
-                            </div>
-                        </div>
-                    <div class="question">
-                        In 1822, Clement Clarke Moore, wrote a Christmas poem that characterized Santa as the
-                        "right jolly old elf" as we know him today. What was the title of his poem?
-                    </div>
-                        <div class="option-row">
-                            <div>
-                                <input type="radio" id="christmas-eve" name="poem" value="christmas-eve" class="option" />
-                                <label for="christmas-eve">The One About Christmas Eve</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="account" name="poem" value="account" class="option1" />
-                                <label for="account">A Visit from St. Nicholas</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="night-before" name="poem" value="night-before" class="option" />
-                                <label for="night-before">'Twas the Night Before Christmas</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="happy-christmas" name="poem" value="happy-christmas" class="option" />
-                                <label for="happy-christmas">Happy Christmas</label>
+                            <div class="choices">
+                                <div>
+                                    <input type="radio" id="radio-a" name="santa" value="a" />
+                                    <label for="sinter-klaas">Sinter Klaas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio-b" name="santa" value="b" />
+                                    <label for="st-nicholas">St. Nicholas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="radio-c" name="santa" value="c" />
+                                    <label for="santa-clause">Santa Clause</label>
+                                </div>
                             </div>
                         </div>
-                    <div class="question">
+                    </form>
+                    <div id="question"></div>
+                    <div id="radioChoices">
+                        <!--  In 1822, Clement Clarke Moore, wrote a Christmas poem that characterized Santa as the
+                                "right jolly old elf" as we know him today. What was the title of his poem?-->
+
+                        <input type="radio" id="radio-a" name="choice" value="a" /><label id="label0"></label>
+                        <input type="radio" id="radio-c" name="choice" value="b" /><label id="label1"></label>
+                        <input type="radio" id="radio-b" name="choice" value="c" /><label id="label2"></label>
+                        </div>
+                    <!-- <div class="question">
                         Which is the snowiest major city on earth?
                     </div>
-                        <div class="option-row">
-                            <div>
-                                <input type="radio" id="anchorage" name="poem" value="anchorage" class="option" />
-                                <label for="anchorage">Anchorage, Alaska, US</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="moscow" name="poem" value="moscow" class="option" />
-                                <label for="moscow">Moscow, Russia</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="aomori" name="poem" value="aomori" class="option1" />
-                                <label for="aomori">Aomori City, Japan</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="ushuaia" name="poem" value="ushuaia" class="option" />
-                                <label for="ushuaia">Ushuaia, Tierra del Fuego, Argentina</label>
-                            </div>
+                    <div class="choices">
+                        
+                            <input type="radio" id="anchorage" name="city" value="anchorage" class="option b" />
+                            <label for="anchorage">Anchorage, Alaska, US</label>
                         </div>
-                </div>
-                <!-- <div class="slide2">
-                        <div class="question2"></div>
-                        <div class="answer-choices2"></div>
-                    </div>
-                    <div class="slide3">
-                        <div class="question3"></div>
-                        <div class="answer-choices3"></div>
-                    </div>
-                    <div class="slide4">
-                        <div class="question4"></div>
-                        <div class="answer-choices4"></div>
+                        <div>
+                            <input type="radio" id="moscow" name="city" value="moscow" class="option b" />
+                            <label for="moscow">Moscow, Russia</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="aomori" name="city" value="aomori" class="option a" />
+                            <label for="aomori">Aomori City, Japan</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="ushuaia" name="city" value="ushuaia" class="option b" />
+                            <label for="ushuaia">Ushuaia, Tierra del Fuego, Argentina</label>
+                        </div>
                     </div> -->
-            </div>
-            <div class="row-3 counters">
-                
-               <p>Answers correct: <div class="correct"></div></p>
-               <p>Answers incorrect: <div class="incorrect"></div></p>
-               <p>Questions unanswered: <div class="blank"></div></p>
-               <button type="button" class="try-again">Try Again?</button>
+                </div>
 
+
+                <!-- <div class="row-3 counters"> -->
+                <div class="col-3 counters">
+                    <p>Answers correct: <div class="correct">0</div>
+                    </p>
+                    <p>Answers incorrect: <div class="incorrect">0</div>
+                    </p>
+                    <button type="button" class="try-again">Try Again?</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
 
