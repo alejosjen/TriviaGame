@@ -1,5 +1,6 @@
 body {
-    background-image: url("../assets/images/christmas-black/christmas-dark.png"); 
+    background-image: url("../images/christmas-black/christmas-dark.png"); 
+    
 }
 /* font-family: 'Homemade Apple', cursive;
 font-family: 'Griffy', cursive;
@@ -8,7 +9,7 @@ font-family: 'Cinzel Decorative', cursive;
 font-family: 'IM Fell English', serif; */
 
 .picture-frame {
-    background-image: url("../assets/images/knitted7.jpg"); 
+    background-image: url("../images/knitted7.jpg"); 
     border: 3px solid #036146;
     display: flex;
     flex-direction: column;
