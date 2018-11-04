@@ -28,7 +28,7 @@ var game = {
     incorrectAnswerCounter: 0,
 
     decrement: function () {
-        var counter = 5;
+        var counter = 120;
         gameCountdown = setInterval(function () {
             console.log(counter);
             counter--;
